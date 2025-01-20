@@ -11,7 +11,6 @@ const keys = Object.keys(user);
 for (let i of keys) {
   console.log(`Keys: ${user[i]}`);
 }
-
 //--2--
 const countProps = (obj) => {
   obj = {
