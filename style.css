@@ -1,0 +1,22 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  row-gap: 40px;
+  margin-left: 50px;
+}
+.btn {
+  width: 500px;
+  height: 60px;
+  background-color: #6f6f64;
+  border: 1px solid #6f6f64;
+  color: white;
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: (0.445, 0.05, 0.55, 0.95);
+}
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
