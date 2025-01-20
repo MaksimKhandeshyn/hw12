@@ -26,7 +26,7 @@ const countProps = (obj) => {
   console.log(`The amount of keys is: ${arr.length}`);
   return arr;
 };
-countProps();
+// countProps();
 
 //--3--
 const findBestEmployee = (employees) => {
@@ -42,7 +42,7 @@ const findBestEmployee = (employees) => {
   return Math.max(...kyes);
 };
 
-findBestEmployee();
+// findBestEmployee();
 
 //--4--
 const countTotalSalary = (employees) => {
@@ -65,7 +65,7 @@ const countTotalSalary = (employees) => {
 
   return res;
 };
-countTotalSalary();
+// countTotalSalary();
 
 //--5--
 const getAllPropValue = (arr, prop) => {
@@ -82,7 +82,7 @@ const getAllPropValue = (arr, prop) => {
   }
   return prop;
 };
-getAllPropValue();
+// getAllPropValue();
 
 //--6--
 const calculateTotalPrice = (allProducts, productName) => {
@@ -105,30 +105,32 @@ const calculateTotalPrice = (allProducts, productName) => {
     console.log(`Cost of ${res.name} is: ${multiplay}`);
   }
 };
-calculateTotalPrice();
+// calculateTotalPrice();
 //--7--
 
 let adding = document.getElementById("adding");
 let deducation = document.getElementById("deduction");
-const bankFunction = (account, history) => {
-  account = {
+const bankFunction = () => {
+  let account = {
     userName: "Maksim",
     id: 192983457358,
     balance: 100000,
     password: "atatatatata",
-    deposit({ firstNum, res }) {
-      firstNum = 10;
-      res = account.balance += firstNum;
-      console.log(`Your balance is: ${res}`);
+    deposit: function () {
+      let firstNum = 10;
+      this.balance += firstNum;
+      console.log(`Your balance is: ${this.balance}`);
     },
-    withdraw({ secondNum, res }) {
-      secondNum = 10;
-      res = account.balance -= secondNum;
-      console.log(`Your balance is: ${res}`);
+    withdraw: function () {
+      let secondNum = 10;
+      this.balance -= secondNum;
+      console.log(`Your balance is: ${this.balance}`);
+    },
+    cgl: function print() {
+      console.log(this.password);
     },
   };
-  history;
-  adding.addEventListener("click", account.deposit);
-  deducation.addEventListener("click", account.withdraw);
+  adding.addEventListener("click", () => account.deposit());
+  deducation.addEventListener("click", () => account.withdraw());
 };
 bankFunction();
