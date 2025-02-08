@@ -1,16 +1,16 @@
 //--1--
-const user = {
-  hobby: "soccer",
-  premium: true,
-};
+// const user = {
+//   hobby: "soccer",
+//   premium: true,
+// };
 
-user.mood = "happy";
-user.hobby = "skydiving";
-user.premium = false;
-const keys = Object.keys(user);
-for (let i of keys) {
-  console.log(`Keys: ${user[i]}`);
-}
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+// const keys = Object.keys(user);
+// for (let i of keys) {
+//   console.log(`Keys: ${user[i]}`);
+// }
 //--2--
 const countProps = (obj) => {
   obj = {
@@ -25,20 +25,28 @@ const countProps = (obj) => {
   console.log(`The amount of keys is: ${arr.length}`);
   return arr;
 };
-countProps();
+// countProps();
 
 //--3--
+//Завдання 3 - тут має повертатись ім'я співробітника, а не кількість його задач.
+
 const findBestEmployee = (employees) => {
   employees = {
     John: 40,
     Bill: 50,
     Steve: 10,
   };
-  const kyes = Object.entries(employees);
-  for (let [name, tasksDone] of kyes) {
-    console.log(`${name}: ${tasksDone}`);
+  let maxTasks = 0;
+  let name = "";
+  for (let [employee, tasks] of Object.entries(employees)) {
+    if (tasks > maxTasks) {
+      maxTasks = tasks;
+      name = employee;
+    }
+    console.log(`${employee}: ${tasks}`);
   }
-  return Math.max(...kyes);
+  console.log(name);
+  return name;
 };
 
 findBestEmployee();
@@ -64,24 +72,21 @@ const countTotalSalary = (employees) => {
 
   return res;
 };
-countTotalSalary();
+// countTotalSalary();
 
 //--5--
+//Завдання 5 - тут має повертатись масив значень властовості
 const getAllPropValue = (arr, prop) => {
   arr = [
     { name: "firstObj", value: 0 },
     { name: "secondObj", value: 1 },
     { name: "thirdObj", value: 2 },
   ];
-  //   console.log(arr);
-  const name = Object.entries(...arr);
-  for (let i of name) {
-    const prop = i[0];
-    console.log(`This is value: ${prop}.`);
+  for (let i of arr) {
+    console.log(arr[i]);
   }
-  return prop;
 };
-getAllPropValue();
+// getAllPropValue();
 
 //--6--
 const calculateTotalPrice = (allProducts, productName) => {
@@ -104,7 +109,7 @@ const calculateTotalPrice = (allProducts, productName) => {
     console.log(`Cost of ${res.name} is: ${multiplay}`);
   }
 };
-calculateTotalPrice();
+// calculateTotalPrice();
 //--7--
 
 let adding = document.getElementById("adding");
@@ -132,4 +137,4 @@ const bankFunction = () => {
   adding.addEventListener("click", () => account.deposit());
   deducation.addEventListener("click", () => account.withdraw());
 };
-bankFunction();
+// bankFunction();
