@@ -25,7 +25,7 @@ const countProps = (obj) => {
   console.log(`The amount of keys is: ${arr.length}`);
   return arr;
 };
-// countProps();
+countProps();
 
 //--3--
 const findBestEmployee = (employees) => {
@@ -47,7 +47,7 @@ const findBestEmployee = (employees) => {
   return name;
 };
 
-// findBestEmployee();
+findBestEmployee();
 
 //--4--
 const countTotalSalary = (employees) => {
@@ -70,10 +70,9 @@ const countTotalSalary = (employees) => {
 
   return res;
 };
-// countTotalSalary();
+countTotalSalary();
 
 //--5--
-//Завдання 5 - тут має повертатись масив значень властовості
 const getAllPropValues = (arr, prop) => {
   arr = [
     { name: "meat", cost: 241, amount: 2 },
@@ -116,7 +115,7 @@ const calculateTotalPrice = (allProducts, productName) => {
     console.log(`Cost of ${res.name} is: ${multiplay}`);
   }
 };
-// calculateTotalPrice();
+calculateTotalPrice();
 //--7--
 
 let adding = document.getElementById("adding");
@@ -144,4 +143,4 @@ const bankFunction = () => {
   adding.addEventListener("click", () => account.deposit());
   deducation.addEventListener("click", () => account.withdraw());
 };
-// bankFunction();
+bankFunction();
