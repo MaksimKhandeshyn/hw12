@@ -28,8 +28,6 @@ const countProps = (obj) => {
 // countProps();
 
 //--3--
-//Завдання 3 - тут має повертатись ім'я співробітника, а не кількість його задач.
-
 const findBestEmployee = (employees) => {
   employees = {
     John: 40,
@@ -49,7 +47,7 @@ const findBestEmployee = (employees) => {
   return name;
 };
 
-findBestEmployee();
+// findBestEmployee();
 
 //--4--
 const countTotalSalary = (employees) => {
@@ -76,17 +74,26 @@ const countTotalSalary = (employees) => {
 
 //--5--
 //Завдання 5 - тут має повертатись масив значень властовості
-const getAllPropValue = (arr, prop) => {
+const getAllPropValues = (arr, prop) => {
   arr = [
-    { name: "firstObj", value: 0 },
-    { name: "secondObj", value: 1 },
-    { name: "thirdObj", value: 2 },
+    { name: "meat", cost: 241, amount: 2 },
+    { name: "CocaCola", cost: 36, amount: 10 },
+    { name: "apple", cost: 10, amount: 5 },
   ];
-  for (let i of arr) {
-    console.log(arr[i]);
+  const values = [];
+  for (const i of arr) {
+    if (i.hasOwnProperty(prop)) {
+      values.push(i[prop]);
+    }
   }
+  return values;
 };
-// getAllPropValue();
+const products = [
+  { name: "meat", cost: 241, amount: 2 },
+  { name: "CocaCola", cost: 36, amount: 10 },
+  { name: "apple", cost: 10, amount: 5 },
+];
+console.log(getAllPropValues(products, "amount"));
 
 //--6--
 const calculateTotalPrice = (allProducts, productName) => {
