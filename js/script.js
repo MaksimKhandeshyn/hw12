@@ -58,17 +58,20 @@ const countTotalSalary = (employees) => {
   };
 
   const arr = Object.values(employees);
-  const [a, b, c] = arr;
-  let res = a + b + c;
+  let value = 0;
+  for (let i in arr) {
+    value += arr[i];
+  }
+  console.log(value);
 
   const keys = Object.entries(employees);
 
   for (let [pos, sal] of keys) {
     console.log(`${pos}: ${sal}`);
   }
-  console.log(res);
+  // console.log(res);
 
-  return res;
+  // return res;
 };
 countTotalSalary();
 
