@@ -69,9 +69,6 @@ const countTotalSalary = (employees) => {
   for (let [pos, sal] of keys) {
     console.log(`${pos}: ${sal}`);
   }
-  // console.log(res);
-
-  // return res;
 };
 countTotalSalary();
 
